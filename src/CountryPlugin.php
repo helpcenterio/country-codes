@@ -141,13 +141,13 @@ class CountryPlugin implements PluginInterface, EventSubscriberInterface
         $data .= '/* DO NOT EDIT! This file has been automatically generated. Run composer update to fetch a new version. */' . PHP_EOL;
         $data .= 'return [' . PHP_EOL;
         $data .= '   \'codes\' => [' . PHP_EOL;
-        foreach ($csv as $csvRow) {
-            $data .= '      \'' . addslashes($csvRow[0]) . '\' => \'' . addslashes($csvRow[1]) . '\',' . PHP_EOL;
+        foreach (array_slice($csv, 1) as $csvRow) {
+            $data .= '      \'' . addslashes($csvRow[0]) . '\' => \'' . addslashes($csvRow[3]) . '\',' . PHP_EOL;
         }
         $data .= '   ],' . PHP_EOL;
         $data .= '   \'countries\' => [' . PHP_EOL;
-        foreach ($csv as $csvRow) {
-            $data .= '      \'' . addslashes($csvRow[1]) . '\' => \'' . addslashes($csvRow[0]) . '\',' . PHP_EOL;
+        foreach (array_slice($csv, 1) as $csvRow) {
+            $data .= '      \'' . addslashes($csvRow[3]) . '\' => \'' . addslashes($csvRow[0]) . '\',' . PHP_EOL;
         }
         $data .= '   ],' . PHP_EOL;
         $data .= '];' . PHP_EOL;

@@ -29,7 +29,7 @@ class Country
 
     const DB_FILENAME = 'iso3166';
     const DB_FOLDER   = 'data';
-    const DB_URL      = 'https://dev.maxmind.com/static/csv/codes/iso3166.csv';
+    const DB_URL      = 'https://raw.githubusercontent.com/ipregistry/iso3166/refs/heads/main/countries.csv';
 
     /**
      * The configuration data that is queried.
